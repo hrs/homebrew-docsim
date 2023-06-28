@@ -9,18 +9,18 @@ class Docsim < Formula
   license "GPL-3.0-or-later"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/hrs/docsim/releases/download/v0.1.7/docsim_darwin_arm64.tar.gz"
-      sha256 "c849d2aa7312d73e53d6fe453365832fd501e08887197e12b16994745b8059d4"
+    if Hardware::CPU.intel?
+      url "https://github.com/hrs/docsim/releases/download/v0.1.7/docsim_0.1.7_darwin_x86_64.tar.gz"
+      sha256 "53ca14e6bde4f24b758e1ce5bbf26a65e4f78cd0bd4294ef391c3fa5546987c7"
 
       def install
         bin.install "docsim"
         man1.install "manpages/docsim.1"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/hrs/docsim/releases/download/v0.1.7/docsim_darwin_x86_64.tar.gz"
-      sha256 "8df951de19a774889c16a23dde44c14a7aa71f4cc078ab29a410bf1afa492631"
+    if Hardware::CPU.arm?
+      url "https://github.com/hrs/docsim/releases/download/v0.1.7/docsim_0.1.7_darwin_arm64.tar.gz"
+      sha256 "e9905b34f98c3b58f53a6326bacb99aae2c2a7bdf48652f4c92fffccdc08e031"
 
       def install
         bin.install "docsim"
@@ -31,8 +31,8 @@ class Docsim < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hrs/docsim/releases/download/v0.1.7/docsim_linux_x86_64.tar.gz"
-      sha256 "4707b0f2efb99e04c22a551494c7fd1327446c79d32689597bc613c3252a74aa"
+      url "https://github.com/hrs/docsim/releases/download/v0.1.7/docsim_0.1.7_linux_x86_64.tar.gz"
+      sha256 "ae4f4c76b1494136c579f8946391d08abbda494cc46534033d441ce2e01316f2"
 
       def install
         bin.install "docsim"
@@ -40,8 +40,8 @@ class Docsim < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hrs/docsim/releases/download/v0.1.7/docsim_linux_arm64.tar.gz"
-      sha256 "ba3f017cb1bb9ddb681dbde4af6362a754e0d810ad85525cfb01352837bba29d"
+      url "https://github.com/hrs/docsim/releases/download/v0.1.7/docsim_0.1.7_linux_arm64.tar.gz"
+      sha256 "438ceb5637cd7378b652152cf726df8cac7633ad1fd79d5b581c34157ac6502b"
 
       def install
         bin.install "docsim"
